@@ -469,14 +469,14 @@ const App = () => {
           </p>
         </div>
 
-        <div className="p-6">
+        <div className="p-4">
           {/* Column Headings */}
           <div className="hidden lg:grid lg:grid-cols-[50px_1fr_120px_100px_120px] gap-4 font-semibold text-gray-700 border-b pb-3">
             <p>No.</p>
-            <p>Subject</p>
-            <p className="text-center">Score</p>
-            <p className="text-center">Grade</p>
-            <p className="text-center">Actions</p>
+            <p className="lg:pl-6">Subject</p>
+            <p>Score</p>
+            <p>Grade</p>
+            <p>Actions</p>
           </div>
 
           {/* Rows */}
@@ -484,20 +484,17 @@ const App = () => {
             {subjects.map((item, index) => (
               <div
                 key={index}
-                className="
-        bg-slate-50 rounded-xl p-4 hover:bg-green-50 transition
-
-        grid grid-cols-1 gap-4
-        sm:grid-cols-2
-        lg:grid-cols-[50px_1fr_120px_100px_120px]
-        lg:items-center
-      "
+                className="bg-slate-50 rounded-xl p-4 hover:bg-green-100 transition
+                      grid grid-cols-1 gap-4
+                      sm:grid-cols-2
+                      lg:grid-cols-[50px_1fr_120px_100px_120px]
+                      lg:items-center"
               >
                 {/* Number */}
                 <div className="flex justify-center lg:justify-center">
-                  <span className="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center font-bold">
+                  <div className="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center font-bold">
                     {index + 1}
-                  </span>
+                  </div>
                 </div>
 
                 {/* Subject */}
