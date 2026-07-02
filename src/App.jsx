@@ -240,13 +240,10 @@ const App = () => {
   };
 
   const handleScoreChange = (index, value) => {
-    const newSubjects = [...subjects];
-
-    // Always update what the user typed
-    newSubjects[index].score = value;
-
-    // Empty input
+    // Allow the user to clear the input
     if (value === "") {
+      const newSubjects = [...subjects];
+      newSubjects[index].score = "";
       newSubjects[index].grade = "";
       newSubjects[index].error = "";
       setSubjects(newSubjects);
@@ -255,15 +252,19 @@ const App = () => {
 
     const score = Number(value);
 
-    // Invalid score
+    // Prevent invalid values from updating the score,
+    // but still show an error message.
     if (score < 0 || score > 100) {
-      newSubjects[index].grade = "";
+      const newSubjects = [...subjects];
       newSubjects[index].error = "Score must be between 0 and 100.";
       setSubjects(newSubjects);
       return;
     }
 
-    // Valid score
+    const newSubjects = [...subjects];
+
+    // Update only if the score is valid
+    newSubjects[index].score = value;
     newSubjects[index].grade = scoreRange(score);
     newSubjects[index].error = "";
 
