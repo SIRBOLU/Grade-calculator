@@ -471,7 +471,7 @@ const App = () => {
 
         <div className="p-6">
           {/* Column Headings */}
-          <div className="grid grid-cols-[50px_1fr_120px_100px_120px] gap-4 font-semibold text-gray-700 border-b pb-3">
+          <div className="hidden lg:grid lg:grid-cols-[50px_1fr_120px_100px_120px] gap-4 font-semibold text-gray-700 border-b pb-3">
             <p>No.</p>
             <p>Subject</p>
             <p className="text-center">Score</p>
